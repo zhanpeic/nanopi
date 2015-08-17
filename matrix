@@ -377,7 +377,19 @@ fa-hardware/lib/GPIOSensor.c
 fa-hardware/demo/obstacle/obstacle.c
 
 
+二十、土壤湿度传感器
+(1) 功能
 
+(2) 访问接口
+vcc:
+gnd:
+ao: pcf8591 ain0
+
+(3) lib
+fa-hardware/lib/pcf8591.c
+
+(4) demo
+fa-hardware/demo/soil/soil.c
 
 
 
