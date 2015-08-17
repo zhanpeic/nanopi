@@ -1,4 +1,4 @@
-CROSS_COMPILE ?= arm-linux-gnueabihf-
+CROSS_COMPILE ?= arm-linux-
 CC = $(CROSS_COMPILE)gcc 
 
 TARGET = $(shell basename `pwd`) 

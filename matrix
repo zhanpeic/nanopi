@@ -42,7 +42,7 @@ GPIOL0: 320
 GPIOM0: 352
 
 
-一.0.96inch 128x64 OLED
+一.0.96inch 128x64 OLED         //没做
 (1) 功能
 显示屏
 
@@ -79,7 +79,7 @@ G: gnd
 S:nanopi_GPIO_GPF1(由demo传进)
 
 (3) driver
-nanopi_sensor.c，支持所有只使用1个GPIO中断的传感器；
+drivers/char/nanopi_sensor.c，支持所有只使用1个GPIO中断的传感器；
 
 (4) lib
 fa-hardware/lib/GPIOSensor.c
@@ -103,10 +103,14 @@ sdo:  接高，用来决定slave address
 5v:
 gnd:
 
-(3) lib
+(3)driver
+/drivers/input/misc/adxl34x.c
+/drivers/input/misc/adxl34x-i2c.c
+
+(4) lib
 fa-hardware/lib/adx134x.c
 
-(4) demo
+(5) demo
 fa-hardware/demo/adx134x/adx134x.c
 
 
@@ -215,10 +219,13 @@ G : gnd
 # cd /sys/devices/w1_bus_master/28-*/w1_slave
 # cat w1_slave
 
-(2) lib
+(2)driver
+drivers/w1/master/w1-gpio.c
+
+(3) lib
 /fa-hardware/lib/w1.c
 
-(3) demo
+(4) demo
 fa-hardware/demo/ds18b20/ds18b20.c
 
 (4) 测试结果
@@ -232,7 +239,7 @@ G: gnd
 S:nanopi_GPIO_GPF1(由demo传进)
 
 (2) driver
-nanopi_sensor.c，支持所有只使用1个GPIO中断的传感器；
+linux-4.x.y/drivers/char/nanopi_sensor.c，支持所有只使用1个GPIO中断的传感器；
 
 (3) lib
 fa-hardware/lib/GPIOSensor.c
@@ -280,10 +287,13 @@ S : nanopi_GPIO_GPB0(只可以选择GPB0或GPB1,由demo传进)
 V : 5V
 G : gnd
 
-(2) lib
+(2) driver
+linux-4.x.y/drivers/char/nanopi_pwm.c
+
+(3) lib
 fa-hardware/lib/pwm.c
 
-(3) demo
+(4) demo
 fa-hardware/demo/buzzer/buzzer.c
 
 
@@ -304,9 +314,35 @@ ok
 
 
 
+十六.RGBLED
+(1) 访问接口
+引脚连接：
+redPin = nanopi_GPIO_GPF1;
+greenPin = nanopi_GPIO_GPF2; 
+bluePin = nanopi_GPIO_GPF4;
+
+(2) lib
+fa-hardware/lib/RGBLED.c
 
 
+(3) demo
+fa-hardware/demo/RGBLED/RGBLED.c
 
+
+十七.倾斜模块 (灵敏度有点低??)
+(1) 访问接口
+V:
+G:
+S:nanopi_GPIO_GPF1
+
+(2) driver
+/drivers/char/nanopi_sensor.c，支持所有只使用1个GPIO中断的传感器；
+
+(3) lib
+fa-hardware/lib/GPIOSensor.c
+
+(4) demo
+fa-hardware/demo/lean/lean.c
 
 
 
