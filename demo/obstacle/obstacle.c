@@ -3,7 +3,7 @@
 
 static struct sensor obstacle[] = {
         {
-                TINY4412_GPIO_PIN1,
+                nanopi_GPIO_GPF1,
                 IRQ_TYPE_EDGE_FALLING
         }
 };

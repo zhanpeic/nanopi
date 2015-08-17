@@ -361,6 +361,20 @@ fa-hardware/lib/GPIOSensor.c
 fa-hardware/demo/track/track.c
 
 
+十九、红外避障
+(1) 访问接口
+V:
+G:
+S: nanopi_GPIO_GPF1
+
+(2) driver
+/drivers/char/nanopi_sensor.c，支持所有只使用1个GPIO中断的传感器；
+
+(3) lib
+fa-hardware/lib/GPIOSensor.c
+
+(4) demo
+fa-hardware/demo/obstacle/obstacle.c
 
 
 
