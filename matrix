@@ -392,7 +392,36 @@ fa-hardware/lib/pcf8591.c
 fa-hardware/demo/soil/soil.c
 
 
+二十一、光敏电阻/可调电阻/热敏电阻
+(1) 功能
 
+(2) 访问接口
+vcc:
+gnd:
+ao: pcf8591 ain0
+
+(3) lib
+fa-hardware/lib/pcf8591.c
+
+(4) demo
+fa-hardware/demo/matrix-analog_to_digital_converter/matrix-analog_to_digital_converter.c
+
+
+二十二、mq2           //没测试
+(1) 功能
+烟雾传感器
+
+(2) 访问接口
+引脚连接：
+vcc:
+gnd:
+ao: pcf8591 ain0
+
+(3) lib
+fa-hardware/lib/pcf8591.c
+
+(4) demo
+fa-hardware/demo/mq2/mq2.c
 
 
 
