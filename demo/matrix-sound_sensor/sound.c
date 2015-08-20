@@ -3,7 +3,7 @@
 
 static struct sensor sound[] = {
         {
-                nanopi_GPIO_GPF1,
+                GPIO_PIN1,
                 IRQ_TYPE_EDGE_BOTH,
         }
 };

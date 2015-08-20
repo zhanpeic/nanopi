@@ -17,15 +17,15 @@ int parseCmd(int argc, char **argv, int *pin, int *Hz, int *duty)
     }
     switch(num) {
     case 0:
-        *pin = nanopi_PWM0; 
+        *pin = PWM_PIN1; 
         break;
     case 1:
-        *pin = nanopi_PWM1;
+        *pin = PWM_PIN2;
         break;
     default:
-        printf("Unsupported pin nanopi_PWM%d\n", num);
+        printf("Unsupported pin PWM_PIN%d\n", num);
         num = 0;
-        *pin = nanopi_PWM0;
+        *pin = PWM_PIN1;
     }
     *Hz = hz;
     *duty = dt;
@@ -35,7 +35,7 @@ int parseCmd(int argc, char **argv, int *pin, int *Hz, int *duty)
 
 int main(int argc, char ** argv)
 {
-    int pin = nanopi_PWM0;
+    int pin = PWM_PIN1;
     int Hz;
     int duty;
     

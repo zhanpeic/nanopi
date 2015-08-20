@@ -6,10 +6,8 @@ int main(int argc, char ** argv)
 {
     int distance = -1;
     
-    int echoPin = nanopi_GPIO_GPF1;
-    //int triggerPin = nanopi_GPIO_GPF2;
-    
-    //if (Hcsr04Init(echoPin, triggerPin) == -1) {
+    int echoPin = GPIO_PIN1;
+
     if (Hcsr04Init(echoPin) == -1) {
         printf("Fail to init hcsr04\n");
     }

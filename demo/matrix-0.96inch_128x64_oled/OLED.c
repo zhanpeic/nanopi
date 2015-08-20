@@ -4,7 +4,7 @@
 int display(int x, int y, char* str)
 {
     int devFD;
-    if ((devFD = OLEDInit(TINY4412_GPIO_PIN1, TINY4412_GPIO_PIN2)) == -1) {
+    if ((devFD = OLEDInit(GPIO_PIN4, GPIO_PIN2)) == -1) {
         printf("Fail to init OLED\n");
         return -1;
     }

@@ -12,7 +12,7 @@ int main(int argc, char ** argv)
         printf("Set relay %s\n", argv[1]);
     }
 
-    int pin = nanopi_GPIO_GPF1;
+    int pin = GPIO_PIN1;
     int ret = -1;
     if ((ret = exportGPIOPin(pin)) != 0) {	
         printf("exportGPIOPin(%d) failed!", pin);

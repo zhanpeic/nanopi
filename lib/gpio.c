@@ -24,42 +24,57 @@ GPIOL0: 320
 GPIOM0: 352
 
  */
-/*
+
 static int isPinValid(int pin) 
 {
-    if (pin == TINY4412_GPIO_PIN1) {
+    if (pin == GPIO_PIN1) {
         return 1;
     }
-    if (pin == TINY4412_GPIO_PIN2) {
+    if (pin == GPIO_PIN2) {
         return 1;
     }
-    if (pin == TINY4412_GPIO_PIN3) {
+    if (pin == GPIO_PIN3) {
         return 1;
     }
-    if (pin == TINY4412_GPIO_PIN4) {
+    if (pin == GPIO_PIN4) {
         return 1;
     }
-    if (pin == TINY4412_GPIO_PIN5) {
+    if (pin == GPIO_PIN5) {
         return 1;
     }
-    if (pin == TINY4412_GPIO_PIN6) {
+    if (pin == GPIO_PIN6) {
         return 1;
     }
-    if (pin == TINY4412_GPIO_PIN7) {
+    if (pin == GPIO_PIN7) {
         return 1;
     }
-    if (pin == TINY4412_GPIO_PIN8) {
+    if (pin == GPIO_PIN8) {
         return 1;
     }
-    if (pin == TINY4412_GPIO_PIN9) {
+    if (pin == GPIO_PIN9) {
         return 1;
     }
-    if (pin == TINY4412_GPIO_PIN10) {
+    if (pin == GPIO_PIN10) {
+        return 1;
+    }
+    if (pin == GPIO_PIN11) {
+        return 1;
+    }
+    if (pin == GPIO_PIN12) {
+        return 1;
+    }
+    if (pin == GPIO_PIN13) {
+        return 1;
+    }
+    if (pin == GPIO_PIN14) {
+        return 1;
+    }
+    if (pin == GPIO_PIN15) {
         return 1;
     }
     return 0;
 }
-*/
+
 EXPORT int exportGPIOPin(int pin) 
 {
     clearLastError();
@@ -92,16 +107,16 @@ EXPORT int setGPIODirection(int pin, int direction)
     GPIO_FILENAME_DEFINE(pin, "direction")
     char directionStr[10];
     if (direction == GPIO_IN) {
-        //if (!isPinValid(pin)) {
-        //    setLastError("invalid pin %d", pin);
-        //    return -1;
-        //}
+        if (!isPinValid(pin)) {
+            setLastError("invalid pin %d", pin);
+            return -1;
+        }
         strcpy(directionStr, "in");
     } else if (direction == GPIO_OUT) {
-        //if (!isPinValid(pin)) {
-        //    setLastError("invalid pin %d", pin);
-        //    return -1;
-        //}
+        if (!isPinValid(pin)) {
+            setLastError("invalid pin %d", pin);
+            return -1;
+        }
         strcpy(directionStr, "out");
     } else {
         setLastError("direction must be 1 or 2,  1->in, 2->out");

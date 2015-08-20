@@ -8,53 +8,68 @@ void parseCmd(int argc, char **argv, int *pin)
     int num = atoi(argv[1]);
     switch(num) {
     case 1:
-        *pin = TINY4412_GPIO_PIN1; 
+        *pin = GPIO_PIN1; 
         break;
     case 2:
-        *pin = TINY4412_GPIO_PIN2;
+        *pin = GPIO_PIN2;
         break;
     case 3:
-        *pin = TINY4412_GPIO_PIN3;
+        *pin = GPIO_PIN3;
         break;
     case 4:
-        *pin = TINY4412_GPIO_PIN4;
+        *pin = GPIO_PIN4;
         break;
     case 5:
-        *pin = TINY4412_GPIO_PIN5;
+        *pin = GPIO_PIN5;
         break;
     case 6:
-        *pin = TINY4412_GPIO_PIN6;
+        *pin = GPIO_PIN6;
         break;
     case 7:
-        *pin = TINY4412_GPIO_PIN7;
+        *pin = GPIO_PIN7;
         break;
     case 8:
-        *pin = TINY4412_GPIO_PIN8;
+        *pin = GPIO_PIN8;
         break;
     case 9:
-        *pin = TINY4412_GPIO_PIN9;
+        *pin = GPIO_PIN9;
         break;
     case 10:
-        *pin = TINY4412_GPIO_PIN10;
+        *pin = GPIO_PIN10;
+        break;
+    case 11:
+        *pin = GPIO_PIN11;
+        break;
+    case 12:
+        *pin = GPIO_PIN12;
+        break;
+    case 13:
+        *pin = GPIO_PIN13;
+        break;
+    case 14:
+        *pin = GPIO_PIN14;
+        break;
+    case 15:
+        *pin = GPIO_PIN15;
         break;
     default:
-        printf("Unsupported pin TINY4412_GPIO_PIN%d\n", num);
+        printf("Unsupported pin GPIO_PIN%d\n", num);
         num = 1;
-        *pin = TINY4412_GPIO_PIN1;
+        *pin = GPIO_PIN1;
     }
-    printf("Using pin TINY4412_GPIO_PIN%d\n", num);    
+    printf("Using pin GPIO_PIN%d\n", num);    
 }
 
 int main(int argc, char ** argv) 
 {
-    int pin = TINY4412_GPIO_PIN1;
+    int pin = GPIO_PIN1;
     int pinValue = -1;
     int ret = -1;
 
     if (argc == 2) {
         parseCmd(argc, argv, &pin);
     } else {
-        printf("Using default pin TINY4412_GPIO_PIN1\n");
+        printf("Using default pin GPIO_PIN1\n");
     }
 
     if ((ret = exportGPIOPin(pin)) != 0) {	

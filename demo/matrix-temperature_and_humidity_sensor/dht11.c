@@ -7,29 +7,26 @@ void parseCmd(int argc, char **argv, int *pin)
     int num = atoi(argv[1]);
     switch(num) {
     case 1:
-        *pin = nanopi_GPIO_GPF1; 
+        *pin = GPIO_PIN1; 
         break;
     case 2:
-        *pin = nanopi_GPIO_GPF1;
+        *pin = GPIO_PIN2;
         break;
     case 3:
-        *pin = nanopi_GPIO_GPF1;
+        *pin = GPIO_PIN3;
         break;
     case 4:
-        *pin = nanopi_GPIO_GPF1;
+        *pin = GPIO_PIN4;
         break;
-    case 9:
-        *pin = nanopi_GPIO_GPF1;
-        break;
-    case 10:
-        *pin = nanopi_GPIO_GPF1;
+    case 5:
+        *pin = GPIO_PIN5;
         break;
     default:
-        printf("Unsupported pin nanopi_GPIO_GPF%d\n", num);
+        printf("Unsupported pin GPIO_PIN%d\n", num);
         num = 1;
-        *pin = nanopi_GPIO_GPF2;
+        *pin = GPIO_PIN1;
     }
-    printf("Using pin nanopi_GPIO_GPF%d\n", num);
+    printf("Using pin GPIO_PIN%d\n", num);
 }
 
 int main(int argc, char ** argv)
@@ -38,12 +35,12 @@ int main(int argc, char ** argv)
     int dhtTemp = 0;
     int dhtHdty = 0;
     int devFD = -1;
-    int pin = nanopi_GPIO_GPF1;
+    int pin = GPIO_PIN1;
 
     if (argc == 2) {
         parseCmd(argc, argv, &pin);
     } else {
-        printf("Using default pin nanopi_GPIO_GPF1\n");
+        printf("Using default pin GPIO_PIN1\n");
     }
     if ((devFD = dht11Init(pin)) == -1) {
         printf("Fail to init dht11\n");

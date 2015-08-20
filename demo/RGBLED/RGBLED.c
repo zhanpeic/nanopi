@@ -4,9 +4,9 @@
 
 int main(int argc, char ** argv) 
 {   
-    int redPin = nanopi_GPIO_GPF1;
-    int greenPin = nanopi_GPIO_GPF2; 
-    int bluePin = nanopi_GPIO_GPF4;
+    int redPin = GPIO_PIN1;
+    int greenPin = GPIO_PIN2; 
+    int bluePin = GPIO_PIN4;
     
     if (RGBLEDInit(redPin, greenPin, bluePin) == -1) {
         printf("Fail to init RGBLED");

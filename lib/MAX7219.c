@@ -143,7 +143,7 @@ EXPORT int MAX7219Init()
         return -1;
     }
 
-    if (setSPIClockDivider(devFD, spiDivider) == -1 ) {
+    if (setSPIClockDivider(devFD, spiSpeed) == -1 ) {
         setLastError("Fail to set MAX7219 SPI clock divider");
         closeHW(devFD);
         return -1;

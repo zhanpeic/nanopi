@@ -10,29 +10,25 @@
 #define GPIO_HIGH               (1)
 
 //nanopi
-#define nanopi_GPIO_GPF1   (161)
-#define nanopi_GPIO_GPF2   (162)
-#define nanopi_GPIO_GPF3   (163)
-#define nanopi_GPIO_GPF4   (164)
-#define nanopi_GPIO_GPF5   (165)
-#define nanopi_GPIO_GPE11  (139)
-#define nanopi_GPIO_GPE12  (140)
-#define nanopi_GPIO_GPE13  (141)
-#define nanopi_GPIO_GPB0   (32)
-#define nanopi_GPIO_GPB1   (33)
-#define nanopi_GPIO_GPB7   (39)
-#define nanopi_GPIO_GPB8   (40)
-#define nanopi_GPIO_GPG4   (196)
-#define nanopi_GPIO_GPG5   (197)
-#define nanopi_GPIO_GPG6   (198)
-#define nanopi_GPIO_GPG7   (199)
-#define nanopi_GPIO_GPG8   (200)
-#define nanopi_GPIO_GPG9   (201)
-#define nanopi_GPIO_GPG10  (202)
-#define nanopi_GPIO_GPG11  (203)
-#define nanopi_GPIO_GPL13  (333)
-#define nanopi_PWM0        (32)
-#define nanopi_PWM1        (33)
+#define GPIO_PIN1 (161) // ETIN1 / GPIO_GPF1
+#define GPIO_PIN2 (162) // EINT2 / GPIO_GPF2
+#define GPIO_PIN3 (163) // EINT3 / GPIO_GPF3
+#define GPIO_PIN4 (164) // EINT4 / GPIO_GPF4
+#define GPIO_PIN5 (165) // EINT5 / GPIO_GPF5
+#define GPIO_PIN6 (193) // EINT9 / GPIO_GPG1
+#define GPIO_PIN7 (195) // EINT11 / GPIO_GPG3
+#define GPIO_PIN8 (196) // EINT12 / GPIO_GPG4
+#define GPIO_PIN9 (197) // EINT13 / GPIO_GPG5
+#define GPIO_PIN10 (198) // EINT14 / GPIO_GPG6
+#define GPIO_PIN11 (199) // EINT15 / GPIO_GPG7
+#define GPIO_PIN12 (200) // EINT16 / GPIO_GPG8
+#define GPIO_PIN13 (201) // EINT17 / GPIO_GPG9
+#define GPIO_PIN14 (202) // EINT18 / GPIO_GPG10
+#define GPIO_PIN15 (203) // EINT19 / GPIO_GPG11
+
+#define PWM_PIN1 (32) // GPB0
+#define PWM_PIN2 (33) // GPB1
+#define PWM_PIN3 (34) // GPB2
 
 int exportGPIOPin(int pin);
 int unexportGPIOPin(int pin);

@@ -8,7 +8,7 @@
 # make CROSS_COMPILE=arm-linux-gnueabihf-
 # make CROSS_COMPILE=arm-linux-gnueabihf- clean
 
-CROSS_COMPILE =
+CROSS_COMPILE = arm-linux-
 ifeq ($(CROSS_COMPILE),)
 $(error "Not set CROSS_COMPILE=";)
 endif

@@ -6,7 +6,7 @@
 
 int main(int argc, char ** argv) 
 {
-    int ledPin = nanopi_GPIO_GPF1; 
+    int ledPin = GPIO_PIN1; 
     int i = 0;
     int ret = -1;
 
