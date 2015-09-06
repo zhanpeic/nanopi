@@ -38,22 +38,22 @@ EXPORT int setSPIBitOrder(int spi_fd, int order) {
 	return ret;
 }
 
-EXPORT int setSPIClockDivider(int spi_fd, int spi_speed) {
+EXPORT int setSPIClockDivider(int spi_fd, int divider) {
 	int ret;
-/*	int spi_speed = 66600000/(2*(divider+1));
+	int spi_speed = 66600000/(2*(divider+1));
 	if(spi_speed > 500000) {
 		spi_speed = 500000;
-	}*/
-    clearLastError();
-	ret = ioctl(spi_fd, SPI_IOC_WR_MAX_SPEED_HZ, &spi_speed);
-	if (ret < 0) {
-		setLastError("Can't ioctl SPI_IOC_WR_MAX_SPEED_HZ");
-		return ret;
 	}
-
+    clearLastError();
 	ret = ioctl(spi_fd, SPI_IOC_RD_MAX_SPEED_HZ, &spi_speed);
 	if (ret < 0) {
 		setLastError("Can't ioctl SPI_IOC_RD_MAX_SPEED_HZ");
+		return ret;
+	}
+
+	ret = ioctl(spi_fd, SPI_IOC_WR_MAX_SPEED_HZ, &spi_speed);
+	if (ret < 0) {
+		setLastError("Can't ioctl SPI_IOC_WR_MAX_SPEED_HZ");
 		return ret;
 	}
 
@@ -64,7 +64,7 @@ EXPORT int setSPIClockDivider(int spi_fd, int spi_speed) {
 EXPORT int setSPIDataMode(int spi_fd, int mode)
 {
 	int ret;
-/*	int spi_mode = 0;
+	int spi_mode = 0;
     clearLastError();
 	switch(mode) {
 		case SPI_MODE0:
@@ -85,14 +85,14 @@ EXPORT int setSPIDataMode(int spi_fd, int mode)
 			setLastError("error SPIDataMode");
 			return -1;
 	}
-*/
-	ret = ioctl(spi_fd, SPI_IOC_WR_MODE32, &mode);
+
+	ret = ioctl(spi_fd, SPI_IOC_WR_MODE32, &spi_mode);
 	if (ret < 0) {
 		setLastError("Can't ioctl SPI_IOC_WR_MODE");
 		return ret;
 	}
 
-	ret = ioctl(spi_fd, SPI_IOC_RD_MODE32, &mode);
+	ret = ioctl(spi_fd, SPI_IOC_RD_MODE32, &spi_mode);
 	if (ret < 0) {
 		setLastError("Can't ioctl SPI_IOC_RD_MODE");
 		return ret;
