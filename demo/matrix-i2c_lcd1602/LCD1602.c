@@ -30,7 +30,7 @@ void test(char* line1, char* line2)
 int main(int argc, char ** argv) {
     int i;
     for (i=0; i<10; i++) {
-         test("FriendlyARM", "NanoPi & Matrix");
+         test("  B&G  Char  LCD", "--by FriendlyARM");
          sleep(3);
     }
     return 0;
