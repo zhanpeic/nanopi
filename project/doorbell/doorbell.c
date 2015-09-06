@@ -23,7 +23,7 @@ int pwm_HZ = 1000;
 int pwm_duty = 500;
 
 int BUZZERpin = PWM_PIN1;
-int LEDpin = GPIO_PIN4;
+int LEDpin = GPIO_PIN3;
 
 int stop = 0;
 void Stop(int signo) {
