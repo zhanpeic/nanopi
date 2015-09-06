@@ -109,7 +109,7 @@ unsigned char OLEDCharMap[]=
 
 };
 
-static unsigned char spiMode = 0;
+static unsigned char spiMode = 2;
 static unsigned char spiBits = 8;
 static int spiDivider = 332;
 static int spiSpeed = 100000;
