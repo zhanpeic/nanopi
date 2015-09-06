@@ -59,8 +59,9 @@ libfahw.a
 /demo/arduino/arduino
 /demo/getevent/getevent
 /demo/fire/fire
-
-
+/demo/matrix*/matrix*
+*~
+README.txt
 
 
 

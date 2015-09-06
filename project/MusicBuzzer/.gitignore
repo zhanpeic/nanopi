@@ -1,0 +1,10 @@
+*.txt~
+*.c~
+/Music~
+*.jpg
+*.jpeg
+/Makefile
+/README.txt
+*.txt
+*.doc
+/MusicBuzzer

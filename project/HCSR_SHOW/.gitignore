@@ -1,0 +1,7 @@
+*.c~
+/Makefile~
+*.txt~
+/Makefile
+/README.txt
+/HCSR_SHOW
+*.docx
